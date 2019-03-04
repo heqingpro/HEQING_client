@@ -3,7 +3,7 @@ eureka:
     service-url:
      defaultZone: http://123.207.39.91:8761/eureka/
 server:
-  port: 8762
+  port: 8763
 spring:
   application:
     name: service-helloworld
@@ -11,7 +11,8 @@ spring:
     config:
       label: master
       profile: dev
-      uri: http://localhost:8888/
-management:
-  security:
-    enabled: false
+  datasource:
+    url: jdbc:mysql://123.207.39.91:3306/test
+    username: root
+    password: 950419
+    driver-class-name: com.mysql.jdbc.Driver

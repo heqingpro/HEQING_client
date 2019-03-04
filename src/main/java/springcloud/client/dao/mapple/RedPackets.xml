@@ -1,0 +1,9 @@
+<mapper namespace="springcloud.client.dao.RedPacketsDao">
+    <select id="findAll" parameterType="String" resultType="springcloud.client.entity.RedPackets">
+        SELECT * FROM red_packets WHERE id = #{id}
+    </select>
+
+    <insert id="insertRedPackets" parameterType="HashMap" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO happiness(city, num) VALUES(#{city}, #{num})
+    </insert>
+</mapper>
