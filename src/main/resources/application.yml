@@ -12,7 +12,14 @@ spring:
       label: master
       profile: dev
   datasource:
-    url: jdbc:mysql://123.207.39.91:3306/test
+    url: jdbc:mysql://123.207.39.91:3306/test?useSSL=false
     username: root
     password: 950419
     driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+mybatis:
+  type-aliases-package: springcloud.client.entity
+  mapper-locations: classpath:springcloud.client.dao.mapple/*.xml

@@ -6,14 +6,21 @@ import java.util.Objects;
 @Entity
 @Table(name = "red_packets", schema = "test")
 public class RedPackets {
+    @Id
+    @GeneratedValue
     private int id;
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "count")
     private Integer count;
+
+    @Column(name = "number")
     private Integer number;
+
+    @Column(name = "total")
     private Integer total;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
