@@ -12,10 +12,23 @@ spring:
       label: master
       profile: dev
   datasource:
+    #配置数据源类型
     url: jdbc:mysql://123.207.39.91:3306/test?useSSL=false
     username: root
     password: 950419
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    #初始化，最小，最大链接数
+    initialSize: 3
+    minidle: 3
+    maxActive: 18
+    # 获取数据库连接等待的超时时间
+    maxWait: 60000
+    # 配置多久进行一次检测，检测需要关闭的空闲连接 单位毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: SELECT 1 FROM dual
+    # 配置监控统计拦截的filters,去掉后，监控界面的sql无法统计
+    filters: stat,wall,log4j
   jpa:
     show-sql: true
     hibernate:
