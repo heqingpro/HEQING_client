@@ -9,10 +9,22 @@
     <classPathEntry
             location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar"/>
     <context id="Tables" targetRuntime="MyBatis3">
-        <!--去除注释 -->
+        <property name="javaFileEncoding" value="UTF-8" />
 
+<!--        &lt;!&ndash; 此处是将UserMapper.xml改名为UserDao.xml 当然 想改成什么都行~ &ndash;&gt;
+        <plugin type="org.mybatis.generator.plugins.rename.RenameSqlMapperPlugin">
+        <property name="searchString" value="Mapper" />
+        <property name="replaceString" value="Dao" />
+        </plugin>
+
+        &lt;!&ndash;!–- 此处是将UserMapper改名为UserDao 接口 当然 想改成什么都行~  -–>&ndash;&gt;
+        <plugin type="org.mybatis.generator.plugins.rename.RenameJavaMapperPlugin">
+        <property name="searchString" value="Mapper$" />
+        <property name="replaceString" value="Dao" />
+        </plugin>-->
+        <!--去除注释 -->
         <commentGenerator>
-            <property name="suppressAllComments" value="true"/>
+            <property name="suppressAllComments" value="false"/>
         </commentGenerator>
 
         <!--mysql数据库连接 -->
@@ -47,7 +59,7 @@
         </javaClientGenerator>
 
         <!--对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等 -->
-        <table tableName="T_RED_PACKET" domainObjectName="RedPacket"
+        <table tableName="T_USER_RED_PACKET" domainObjectName="UserRedPacket"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>

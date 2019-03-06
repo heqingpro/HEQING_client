@@ -22,4 +22,4 @@ spring:
       ddl-auto: update
 mybatis:
   type-aliases-package: springcloud.client.entity
-  mapper-locations: classpath:springcloud.client.dao.mapple/*.xml
+  mapper-locations: classpath*:springcloud/client/dao/mapple/*.xml

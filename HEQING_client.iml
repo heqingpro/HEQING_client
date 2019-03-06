@@ -23,6 +23,7 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="Entities" />
+          <factory-entry name="entityManagerFactory" />
         </datasource-mapping>
       </configuration>
     </facet>

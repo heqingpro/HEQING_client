@@ -1,5 +1,6 @@
 package springcloud.client;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @RestController
 @RefreshScope
+@MapperScan("springcloud.client.dao")
 public class EurekaClientApplication {
     public static void main(String[] args){
         SpringApplication.run(EurekaClientApplication.class,args);
