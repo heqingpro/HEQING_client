@@ -33,6 +33,10 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  #devtools:
+    #restart:
+      #enabled: true
 mybatis:
   type-aliases-package: springcloud.client.entity
   mapper-locations: classpath*:springcloud/client/dao/mapple/*.xml
+#debug: true

@@ -22,6 +22,12 @@
     </properties>
 
     <dependencies>
+        <!-- 启用热部署-->
+<!--        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>-->
         <!--eureka server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -94,6 +100,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+<!--                <configuration>
+                    <fork>true</fork>
+                </configuration>-->
             </plugin>
         </plugins>
         <resources>

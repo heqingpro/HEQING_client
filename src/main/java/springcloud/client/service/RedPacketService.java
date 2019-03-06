@@ -3,6 +3,7 @@ package springcloud.client.service;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import springcloud.client.dao.UserRedPacketMapper;
 import springcloud.client.entity.UserRedPacket;
 
@@ -12,6 +13,7 @@ public class RedPacketService {
     @Autowired
     private UserRedPacketMapper userRedPacketMapper;
 
+    @Transactional
     public String addUserRedPacket(){
         UserRedPacket userRedPacket = new UserRedPacket();
         userRedPacket.setUserId(1);
