@@ -26,7 +26,7 @@ public class RedPacketController {
 
     @RequestMapping("/grep")
     @ResponseBody
-    public ResponseDataModel grepRedPacket(HttpServletRequest request, HttpServletResponse response, @RequestParam Integer userid){
-        return redPacketService.grepRedPacket(userid);
+    public ResponseDataModel grepRedPacket(HttpServletRequest request, HttpServletResponse response, @RequestParam Integer userId,@RequestParam Integer id){
+        return redPacketService.grepRedPacket(userId,id);
     }
 }
