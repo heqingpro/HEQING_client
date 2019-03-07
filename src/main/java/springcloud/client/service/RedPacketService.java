@@ -10,6 +10,8 @@ import springcloud.client.entity.RedPacket;
 import springcloud.client.entity.UserRedPacket;
 import springcloud.client.model.BaseDataModel.ResponseDataModel;
 
+import java.math.BigDecimal;
+
 @Service
 public class RedPacketService {
 
@@ -35,13 +37,14 @@ public class RedPacketService {
         int stock = redPacket.getStock();
         UserRedPacket userRedPacket = new UserRedPacket();
         userRedPacket.setRedPacketId(stock);
-        userRedPacket.setAmount(redPacket.getAmount());
+        userRedPacket.setAmount(new BigDecimal(redPacket.getUnitAmount()));
         userRedPacket.setUserId(userId);
         if(stock>0) {//红包个数减一
             redPacket.setStock(stock-1);
             redPacketMapper.updateByPrimaryKey(redPacket);
+            userRedPacket.setRedPacket(id);
+            userRedPacketMapper.insert(userRedPacket);
         }
-        userRedPacketMapper.insert(userRedPacket);
         return new ResponseDataModel(true,"抢红包成功");
     }
 }
