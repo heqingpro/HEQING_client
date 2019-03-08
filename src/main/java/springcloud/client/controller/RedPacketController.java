@@ -29,4 +29,13 @@ public class RedPacketController {
     public ResponseDataModel grepRedPacket(HttpServletRequest request, HttpServletResponse response, @RequestParam Integer userId,@RequestParam Integer id){
         return redPacketService.grepRedPacket(userId,id);
     }
+
+    @RequestMapping("/grepBylock")
+    @ResponseBody
+    public ResponseDataModel grepRedPacketByLock(HttpServletRequest request,
+                                                 HttpServletResponse response,
+                                                 @RequestParam Integer userId,
+                                                 @RequestParam Integer id){
+        return redPacketService.grepRedPacketByLock(userId,id);
+    }
 }

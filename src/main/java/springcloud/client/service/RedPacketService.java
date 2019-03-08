@@ -47,4 +47,27 @@ public class RedPacketService {
         }
         return new ResponseDataModel(true,"抢红包成功");
     }
+
+    /**
+     * 乐观锁抢红包
+     */
+    @Transactional
+    public ResponseDataModel grepRedPacketByLock(Integer userId, Integer id){
+        RedPacket redPacket = redPacketMapper.selectByPrimaryKey(id);
+        int stock = redPacket.getStock();
+        UserRedPacket userRedPacket = new UserRedPacket();
+        userRedPacket.setRedPacketId(stock);
+        userRedPacket.setAmount(new BigDecimal(redPacket.getUnitAmount()));
+        userRedPacket.setUserId(userId);
+        if(stock>0) {
+            redPacket.setStock(stock-1);
+            int num = redPacketMapper.updateByLock(redPacket);
+            userRedPacket.setRedPacket(id);
+            if(num>0){
+                userRedPacketMapper.insert(userRedPacket);
+            }
+        }
+        return  new ResponseDataModel(true,"抢红包成功");
+    }
+
 }
