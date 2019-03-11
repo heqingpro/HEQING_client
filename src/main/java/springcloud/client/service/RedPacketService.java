@@ -45,7 +45,8 @@ public class RedPacketService {
         userRedPacket.setRedPacketId(stock);
         userRedPacket.setAmount(new BigDecimal(redPacket.getUnitAmount()));
         userRedPacket.setUserId(userId);
-        if(stock>0) {//红包个数减一
+        //红包个数减一
+        if(stock>0) {
             redPacket.setStock(stock-1);
             redPacketMapper.updateByPrimaryKey(redPacket);
             userRedPacket.setRedPacket(id);

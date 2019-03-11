@@ -3,6 +3,9 @@ package springcloud.client.dao;
 import org.springframework.stereotype.Component;
 import springcloud.client.entity.UserRedPacket;
 
+/**
+ * @author hezy
+ */
 @Component
 public interface UserRedPacketMapper {
     /**

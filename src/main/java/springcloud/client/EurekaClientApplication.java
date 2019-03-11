@@ -46,9 +46,10 @@ public class EurekaClientApplication {
         return hello;
     }
 
-    /*
-    允许跨域访问
-    */
+    /**
+     * 允许跨域访问
+     * @return
+     */
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
