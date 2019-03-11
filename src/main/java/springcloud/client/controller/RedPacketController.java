@@ -10,7 +10,12 @@ import springcloud.client.service.RedPacketService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/**
+ * @program: HEQING_client
+ * @description:
+ * @author: hezy
+ * @create: 2019-03-11 16:33
+ **/
 @RestController
 @RequestMapping("/redPacket")
 public class RedPacketController {

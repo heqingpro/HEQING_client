@@ -4,11 +4,22 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+
+/**
+ * @program: HEQING_client
+ * @description:
+ * @author: hezy
+ * @create: 2019-03-11 16:33
+ **/
 public class DateUtil {
 
 	private final static String TAG = DateUtil.class.getName();
 
 	public static final String PATTERN1 = "yyyy-MM-dd";
+
+	public static final Integer UTC_LENGTH = 10;
+
+
 
 	/**
 	 * 10-13位utc时间转换为日期（字符串）
@@ -19,7 +30,8 @@ public class DateUtil {
 	 */
 	public static String utc2DateString(String utcTime, String pattern) {
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-		if (utcTime.trim().length() == 10) { // 为10位时间戳时
+		// 为10位时间戳时
+		if (utcTime.trim().length() == UTC_LENGTH) {
 			utcTime += "000";
 		}
 		long l1 = new Long(utcTime);

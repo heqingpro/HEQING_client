@@ -11,6 +11,12 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/**
+ * @program: HEQING_client
+ * @description: 
+ * @author: hezy
+ * @create: 2019-03-11 16:33
+ **/
 @Configuration
 public class DruidConfiguration {
 
@@ -19,7 +25,7 @@ public class DruidConfiguration {
      * @return
      */
     @Bean
-    public ServletRegistrationBean DruidStatViewServle(){
+    public ServletRegistrationBean druidStatViewServle(){
 
         //org.springframework.boot.context.embedded.ServletRegistrationBean提供类的进行注册.
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(),"/druid/*");

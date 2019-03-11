@@ -1,5 +1,11 @@
 package springcloud.client.model;
 
+/**
+ * @program: HEQING_client
+ * @description:
+ * @author: hezy
+ * @create: 2019-03-11 16:33
+ **/
 public class BaseDataModel {
 
 	private Integer page;

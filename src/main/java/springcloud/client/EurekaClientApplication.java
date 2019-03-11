@@ -14,6 +14,12 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * @program: HEQING_client
+ * @description: EurekaClientApplication
+ * @author: hezy
+ * @create: 2019-03-11 16:33
+ **/
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableEurekaClient

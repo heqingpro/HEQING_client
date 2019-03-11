@@ -12,6 +12,12 @@ import springcloud.client.model.BaseDataModel.ResponseDataModel;
 
 import java.math.BigDecimal;
 
+/**
+ * @program: HEQING_client
+ * @description:
+ * @author: hezy
+ * @create: 2019-03-11 16:33
+ **/
 @Service
 public class RedPacketService {
 
