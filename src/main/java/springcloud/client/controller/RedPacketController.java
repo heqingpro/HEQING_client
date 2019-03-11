@@ -43,4 +43,11 @@ public class RedPacketController {
                                                  @RequestParam Integer id){
         return redPacketService.grepRedPacketByLock(userId,id);
     }
+
+    @RequestMapping("/grepByRedis")
+    @ResponseBody
+    public ResponseDataModel grepByRedis(HttpServletRequest request, HttpServletResponse response,
+                                         @RequestParam Integer userId, @RequestParam Integer id){
+        return redPacketService.grepByRedis(userId,id);
+    }
 }

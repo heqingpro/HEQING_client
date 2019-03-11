@@ -37,7 +37,7 @@ spring:
     database: 0
     host: 123.207.39.91
     port: 6379
-    password: 950419
+    password:
     pool:
       max-active: 200
       max-wait: -1

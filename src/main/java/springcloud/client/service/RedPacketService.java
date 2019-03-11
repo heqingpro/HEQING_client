@@ -9,6 +9,7 @@ import springcloud.client.dao.UserRedPacketMapper;
 import springcloud.client.entity.RedPacket;
 import springcloud.client.entity.UserRedPacket;
 import springcloud.client.model.BaseDataModel.ResponseDataModel;
+import springcloud.client.util.RedisUtil;
 
 import java.math.BigDecimal;
 
@@ -26,6 +27,9 @@ public class RedPacketService {
 
     @Autowired
     private UserRedPacketMapper userRedPacketMapper;
+
+    @Autowired
+    RedisUtil redisUtil;
 
     @Transactional(rollbackFor = Exception.class)
     public String addUserRedPacket(){
@@ -75,6 +79,18 @@ public class RedPacketService {
             }
         }
         return  new ResponseDataModel(true,"抢红包成功");
+    }
+
+    /**
+     * grep red packet by redis
+     * @param userId
+     * @param id
+     * @return
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public ResponseDataModel grepByRedis(Integer userId,Integer id){
+        redisUtil.set("redPacket","success add to redis");
+        return new ResponseDataModel(true,"");
     }
 
 }
