@@ -27,7 +27,7 @@ public class RedPacketService {
     @Autowired
     private UserRedPacketMapper userRedPacketMapper;
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public String addUserRedPacket(){
         UserRedPacket userRedPacket = new UserRedPacket();
         userRedPacket.setUserId(1);
@@ -37,7 +37,7 @@ public class RedPacketService {
         return gson.toJson(userRedPacket);
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public ResponseDataModel grepRedPacket(Integer userId,Integer id){
         RedPacket redPacket = redPacketMapper.selectByPrimaryKey(id);
         int stock = redPacket.getStock();
@@ -58,7 +58,7 @@ public class RedPacketService {
     /**
      * 乐观锁抢红包
      */
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public ResponseDataModel grepRedPacketByLock(Integer userId, Integer id){
         RedPacket redPacket = redPacketMapper.selectByPrimaryKey(id);
         int stock = redPacket.getStock();
