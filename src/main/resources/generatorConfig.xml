@@ -59,7 +59,7 @@
         </javaClientGenerator>
 
         <!--对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等 -->
-        <table tableName="T_RED_PACKET" domainObjectName="RedPacket"
+        <table tableName="important_news_category" domainObjectName="ImportantNewsCategory"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
